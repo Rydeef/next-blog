@@ -14,9 +14,9 @@ export const Button = ({ children, className, variant = "button" }: Props) => {
     <button
       className={`${className} ${classNames({
         "px-2 py-1 hover:bg-transparent duration-150 cursor-pointer": true,
-        "border-white border-1 hover:text-white bg-white text-black rounded":
+        "border-white border-1 hover:text-white bg-white text-black rounded active:bg-white":
           theme === Theme.DARK && variant == "button",
-        "border-black border-1 hover:text-black bg-black text-white rounded":
+        "border-black border-1 hover:text-black bg-black text-white rounded active:bg-black":
           theme === Theme.LIGHT && variant == "button",
         "hover:text-purple-400": variant == "link",
         "border-b-1 hover:border-purple-400":
