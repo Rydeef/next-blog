@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <Featured />
       <CategoryList />
-      <div className="flex">
+      <div className="flex mt-16">
         <CardList />
         <Menu />
       </div>

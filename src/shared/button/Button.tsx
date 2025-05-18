@@ -5,19 +5,24 @@ import { JSX, useContext } from "react";
 
 interface Props extends React.HTMLProps<HTMLButtonElement> {
   children: JSX.Element | string;
+  variant?: "button" | "link";
 }
 
-export const Button = ({ children, className }: Props) => {
+export const Button = ({ children, className, variant = "button" }: Props) => {
   const { theme } = useContext(ThemeContext);
   return (
     <button
       className={`${className} ${classNames({
-        "px-2 py-1 rounded hover:bg-transparent duration-100 cursor-pointer":
-          true,
-        "border-white border-2 hover:text-white bg-white text-black":
-          theme === Theme.DARK,
-        "border-black border-2 hover:text-black bg-black text-white":
-          theme === Theme.LIGHT,
+        "px-2 py-1 hover:bg-transparent duration-150 cursor-pointer": true,
+        "border-white border-1 hover:text-white bg-white text-black rounded":
+          theme === Theme.DARK && variant == "button",
+        "border-black border-1 hover:text-black bg-black text-white rounded":
+          theme === Theme.LIGHT && variant == "button",
+        "hover:text-purple-400": variant == "link",
+        "border-b-1 hover:border-purple-400":
+          theme === Theme.DARK && variant == "link",
+        "border-b-1 border-black hover:border-purple-400":
+          theme === Theme.LIGHT && variant == "link",
       })}`}
     >
       {children}
