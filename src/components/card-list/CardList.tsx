@@ -3,8 +3,8 @@ import Pagination from "../pagination/Pagination";
 
 const CardList = () => {
   return (
-    <div>
-      CardList
+    <div className="flex-5">
+      <h1>Recent posts</h1>
       <Pagination />
     </div>
   );
