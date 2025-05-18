@@ -11,8 +11,8 @@ const Login = () => {
         className={classNames({
           "flex flex-col justify-center items-center w-2/4 rounded-2xl space-y-8":
             true,
-          "text-white bg-black": theme === Theme.LIGHT,
-          "text-black bg-white": theme === Theme.DARK,
+          "text-white bg-slate-800": theme === Theme.LIGHT,
+          "text-slate-800 bg-white": theme === Theme.DARK,
         })}
       >
         <div className="bg-blue-400 p-4 rounded cursor-pointer">Sign up with Google</div>

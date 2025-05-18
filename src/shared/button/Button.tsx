@@ -8,7 +8,12 @@ interface Props extends React.HTMLProps<HTMLButtonElement> {
   variant?: "button" | "link";
 }
 
-export const Button = ({ children, className, variant = "button" }: Props) => {
+export const Button = ({
+  children,
+  className,
+  variant = "button",
+  onClick,
+}: Props) => {
   const { theme } = useContext(ThemeContext);
   return (
     <button
@@ -24,6 +29,7 @@ export const Button = ({ children, className, variant = "button" }: Props) => {
         "border-b-1 border-black hover:border-purple-400":
           theme === Theme.LIGHT && variant == "link",
       })}`}
+      onClick={onClick}
     >
       {children}
     </button>
