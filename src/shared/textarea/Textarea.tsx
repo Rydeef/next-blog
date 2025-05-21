@@ -8,6 +8,8 @@ export const Textarea = (props: React.HTMLProps<HTMLTextAreaElement>) => {
 
   return (
     <textarea
+      value={props.value}
+      onChange={props.onChange}
       {...props}
       rows={6}
       className={classNames({

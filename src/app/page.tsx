@@ -10,7 +10,7 @@ interface Props {
 export default async function Home({ searchParams }: Props) {
   const { page: temp } = await searchParams;
 
-  const page = parseInt(temp) || 1
+  const page = parseInt(temp) || 1;
 
   return (
     <div>

@@ -6,12 +6,12 @@ import { NextResponse } from "next/server";
 export const GET = async (req) => {
   const { searchParams } = new URL(req.url);
 
-  const postSlug = searchParams.get("postSlug");
+  const postId = searchParams.get("postId");
 
   try {
     const comments = await prisma.comment.findMany({
       where: {
-        ...(postSlug && { postSlug }),
+        ...(postId && { postId: postId }),
       },
       include: { user: true },
     });

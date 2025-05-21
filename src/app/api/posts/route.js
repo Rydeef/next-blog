@@ -7,17 +7,35 @@ export const GET = async (req) => {
 
   const page = searchParams.get("page");
   const cat = searchParams.get("cat");
+  const popular = searchParams.get("popular");
 
   const POST_PER_PAGE = 4;
 
-  const query = {
-    take: POST_PER_PAGE,
-    skip: POST_PER_PAGE * (page - 1),
-    where: {
-      ...(cat && { catSlug: cat }),
-    },
-  };
-  
+  let query;
+  if (popular) {
+    query = {
+      orderBy: [
+        {
+          views: "desc",
+        },
+      ],
+      take: POST_PER_PAGE,
+      skip: POST_PER_PAGE * (page - 1),
+      where: {
+        ...(cat && { catSlug: cat }),
+      },
+      include: { user: true },
+    };
+  } else {
+    query = {
+      take: POST_PER_PAGE,
+      skip: POST_PER_PAGE * (page - 1),
+      where: {
+        ...(cat && { catSlug: cat }),
+      },
+    };
+  }
+
   try {
     const [posts, count] = await prisma.$transaction([
       prisma.post.findMany(query),

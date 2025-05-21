@@ -22,7 +22,7 @@ export const Card = (post: Post) => {
         </div>
         <div>
           <Button variant="link">
-            <Link href="/">Read more...</Link>
+            <Link href={`/posts/${post.id}`}>Read more...</Link>
           </Button>
         </div>
       </div>

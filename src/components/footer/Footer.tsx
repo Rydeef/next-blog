@@ -22,10 +22,10 @@ const Footer = () => {
         </div>
         <div className="flex flex-col">
           <div>Tags</div>
-          <Link href="/" className="text-sm text-gray-400">Style</Link>
-          <Link href="/" className="text-sm text-gray-400">Fashion</Link>
-          <Link href="/" className="text-sm text-gray-400">Coding</Link>
-          <Link href="/" className="text-sm text-gray-400">Travel</Link>
+          <Link href="/blog?cat=style" className="text-sm text-gray-400">Style</Link>
+          <Link href="/blog?cat=fashion" className="text-sm text-gray-400">Fashion</Link>
+          <Link href="/blog?cat=coding" className="text-sm text-gray-400">Coding</Link>
+          <Link href="/blog?cat=travel" className="text-sm text-gray-400">Travel</Link>
         </div>
       </div>
     </div>

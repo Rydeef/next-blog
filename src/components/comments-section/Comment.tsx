@@ -1,27 +1,29 @@
+import { Comment, User } from "@prisma/client";
 import Image from "next/image";
 
-export const Comment = () => {
+interface Props extends Comment {
+  user: User;
+}
+
+export const CommentCard = ({ user, createdAt, desc }: Props) => {
   return (
     <div className="flex flex-col w-full">
       <div className="flex items-center">
-        <Image
-          src="/culture.png"
-          alt="culture"
-          height={48}
-          width={48}
-          className="rounded-full aspect-square object-cover mr-4 border-4"
-        />
+        {user?.image ? (
+          <Image
+            src={user.image}
+            alt="culture"
+            height={48}
+            width={48}
+            className="rounded-full aspect-square object-cover mr-4 border-4"
+          />
+        ) : null}
         <div className="text-sm text-gray-400">
-          <div>Dmytrii Ivankevych</div>
-          <div>2025.05.18</div>
+          <div>{user.name}</div>
+          <div>{new Date(createdAt).toLocaleDateString()}</div>
         </div>
       </div>
-      <div className="mt-4">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos sed
-        commodi nisi deleniti! Delectus earum debitis consequuntur ratione est
-        pariatur, dignissimos eaque facere iure nobis, vel, ipsa iste autem
-        eveniet!
-      </div>
+      <div className="mt-4">{desc}</div>
     </div>
   );
 };
