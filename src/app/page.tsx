@@ -3,13 +3,21 @@ import CategoryList from "@/components/category-list/CategoryList";
 import Featured from "@/components/featured/Featured";
 import Menu from "@/components/menu/Menu";
 
-export default function Home() {
+interface Props {
+  searchParams: { page: string };
+}
+
+export default async function Home({ searchParams }: Props) {
+  const { page: temp } = await searchParams;
+
+  const page = parseInt(temp) || 1
+
   return (
     <div>
       <Featured />
       <CategoryList />
       <div className="flex mt-16">
-        <CardList />
+        <CardList page={page} />
         <Menu />
       </div>
     </div>
