@@ -7,7 +7,6 @@ import classNames from "classnames";
 
 const ThemeToggle = () => {
   const { toggle, theme } = useContext(ThemeContext);
-  console.log(theme, toggle);
 
   return (
     <div

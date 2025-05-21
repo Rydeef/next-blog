@@ -17,7 +17,7 @@ export const Button = ({
   const { theme } = useContext(ThemeContext);
   return (
     <button
-      className={`${className} ${classNames({
+      className={classNames({
         "px-2 py-1 hover:bg-transparent duration-150 cursor-pointer": true,
         "border-white border-1 hover:text-white bg-white text-black rounded active:bg-white":
           theme === Theme.DARK && variant == "button",
@@ -28,7 +28,8 @@ export const Button = ({
           theme === Theme.DARK && variant == "link",
         "border-b-1 border-black hover:border-purple-400":
           theme === Theme.LIGHT && variant == "link",
-      })}`}
+        [className!]: className,
+      })}
       onClick={onClick}
     >
       {children}

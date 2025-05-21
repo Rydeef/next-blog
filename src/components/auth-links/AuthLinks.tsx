@@ -1,9 +1,19 @@
 "use client";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const AuthLinks = () => {
-  const [isAuthenticated] = useState(false);
+  const [isAuthenticated, setAuthenticated] = useState(false);
+  const { status } = useSession();
+
+  const logout = () => {
+    signOut();
+  };
+
+  useEffect(() => {
+    setAuthenticated(status === "authenticated");
+  }, [status]);
 
   if (!isAuthenticated) {
     return <Link href="/login">Login</Link>;
@@ -12,7 +22,9 @@ const AuthLinks = () => {
   return (
     <>
       <Link href="/write">Write</Link>
-      <span className="cursor-pointer">Logout</span>
+      <span className="cursor-pointer" onClick={logout}>
+        Logout
+      </span>
     </>
   );
 };
