@@ -10,8 +10,8 @@ const Navbar = () => {
       <div className="flex justify-between items-center space-x-4">
         <ThemeToggle/>
         <Link href="/">Homepage</Link>
-        <Link href="/">Contacts</Link>
-        <Link href="/">About</Link>
+        {/* <Link href="/">Contacts</Link> */}
+        {/* <Link href="/">About</Link> */}
         <AuthLinks />
       </div>
     </div>

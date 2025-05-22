@@ -17,7 +17,7 @@ const Login = () => {
     signIn("google");
   };
 
-    const signInWithGithub = () => {
+  const signInWithGithub = () => {
     signIn("github");
   };
 
@@ -44,14 +44,7 @@ const Login = () => {
 
   return (
     <div className="w-full flex justify-center max-h-screen h-148">
-      <div
-        className={classNames({
-          "flex flex-col justify-center items-center w-2/4 rounded-2xl space-y-8":
-            true,
-          "text-white bg-slate-400": theme === Theme.LIGHT,
-          "text-slate-400 bg-white": theme === Theme.DARK,
-        })}
-      >
+      <div className="flex flex-col justify-center items-center w-2/4 rounded-2xl space-y-8 bg-slate-400">
         <Button onClick={signInWithGoogle}>Sign up with Google</Button>
         <Button onClick={signInWithGithub}>Sign up with Github</Button>
       </div>

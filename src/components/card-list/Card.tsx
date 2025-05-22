@@ -17,8 +17,7 @@ export const Card = (post: Post) => {
           <span className="text-purple-400">{post.catSlug?.toUpperCase()}</span>
         </div>
         <div>
-          <h3>{post.title}</h3>
-          <p>{post.desc}</p>
+          <h3 className="mb-4 font-bold">{post.title}</h3>
         </div>
         <div>
           <Button variant="link">
