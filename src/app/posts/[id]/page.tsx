@@ -3,7 +3,7 @@ import Menu from "@/components/menu/Menu";
 import Image from "next/image";
 
 interface Props {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 const getData = async (id: string) => {

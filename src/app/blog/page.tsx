@@ -2,7 +2,7 @@ import CardList from "@/components/card-list/CardList";
 import Menu from "@/components/menu/Menu";
 
 interface Props {
-  searchParams: { cat: string; page: string };
+  searchParams: Promise<{ cat: string; page: string }>;
 }
 
 const BlogPage = async ({ searchParams }: Props) => {

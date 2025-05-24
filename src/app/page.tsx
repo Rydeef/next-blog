@@ -4,7 +4,7 @@ import Featured from "@/components/featured/Featured";
 import Menu from "@/components/menu/Menu";
 
 interface Props {
-  searchParams: { page: string };
+  searchParams:  Promise<{ page: string }>;
 }
 
 export default async function Home({ searchParams }: Props) {
