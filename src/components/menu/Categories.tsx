@@ -2,7 +2,7 @@ import { Category } from "@prisma/client";
 import Link from "next/link";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories");
+  const res = await fetch("https://next-blog-pkle.vercel.app/api/categories");
 
   if (!res.ok) {
     throw new Error("Failed");

@@ -10,7 +10,7 @@ interface Props {
 
 const getData = async (page: number, cat?: string) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`
+    `https://next-blog-pkle.vercel.app/api/posts?page=${page}&cat=${cat || ""}`
   );
 
   if (!res.ok) {

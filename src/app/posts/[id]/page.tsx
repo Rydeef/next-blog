@@ -7,9 +7,7 @@ interface Props {
 }
 
 const getData = async (id: string) => {
-  console.log(`http://localhost:3000/api/posts/${id}`);
-
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`);
+  const res = await fetch(`https://next-blog-pkle.vercel.app/api/posts/${id}`);
 
   if (!res.ok) {
     throw new Error("Failed");

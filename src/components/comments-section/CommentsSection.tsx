@@ -34,7 +34,7 @@ const CommentsSection = ({ postId }: Props) => {
   const [desc, setDesc] = useState("");
 
   const { data, mutate } = useSWR(
-    `http://localhost:3000/api/comments?postId=${postId}`,
+    `https://next-blog-pkle.vercel.app/api/comments?postId=${postId}`,
     fetcher
   );
 
